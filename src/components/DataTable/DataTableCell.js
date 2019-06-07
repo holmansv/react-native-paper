@@ -27,14 +27,14 @@ class DataTableCell extends React.Component<Props> {
   static displayName = 'DataTable.Cell';
 
   render() {
-    const { children, style, numeric, ...rest } = this.props;
+    const { children, style, numeric, textProps, ...rest } = this.props;
 
     return (
       <TouchableRipple
         {...rest}
         style={[styles.container, numeric && styles.right, style]}
       >
-        <Text numberOfLines={1}>{children}</Text>
+        <Text {...textProps}>{children}</Text>
       </TouchableRipple>
     );
   }
